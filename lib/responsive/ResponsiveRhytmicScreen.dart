@@ -1,15 +1,6 @@
 import 'dart:async';
-import 'dart:io';
-
 import 'package:confetti/confetti.dart';
-import 'package:dropdown_button2/custom_dropdown_button2.dart';
-import 'package:dropdown_button2/dropdown_button2.dart';
-import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:rhythmicbreathingtechnique/AppColors.dart';
 import 'package:rhythmicbreathingtechnique/AppStrings.dart';
@@ -19,13 +10,8 @@ import 'package:rhythmicbreathingtechnique/model/RhythmicModel.dart';
 import 'package:rhythmicbreathingtechnique/provider/RhythmicBreathingProvider.dart';
 import 'dart:math' as math;
 import '../OpenPainter.dart';
-import '../RhythmicBreathingTechniqueTesting.dart';
 import '../ResponsiveCirclePainter.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:number_inc_dec/number_inc_dec.dart';
-import 'package:flutter_time_picker_spinner/flutter_time_picker_spinner.dart';
-
-import '../app_show_date_picker.dart';
 
 class ResponsiveRhythmicScreen extends StatefulWidget {
   @override
@@ -85,12 +71,6 @@ class ResponsiveRhythmicState extends State<ResponsiveRhythmicScreen>
   TextEditingController minuteEditController = TextEditingController();
   TextEditingController secondEditingController = TextEditingController();
 
-  // scrollItem("assessment",Icon(Icons.assessment))
-  // scrollItem("assessment",Icon(Icons.assessment))
-  // scrollItem("assessment",Icon(Icons.assessment))
-  // scrollItem("assessment",Icon(Icons.assessment))
-  // scrollItem("assessment",Icon(Icons.assessment));
-  //blue dark Color(0xFF264E8F),
 
   var darkBlue = const Color(0xFF264E8F);
 
@@ -98,10 +78,8 @@ class ResponsiveRhythmicState extends State<ResponsiveRhythmicScreen>
 
   int sumDuration = 4 + 4 + 4 + 4;
 
-  //String? selectval = "00:12";
   var items;
 
-  // final List<double> sizes = [10,15,15,10,10];//
   final List<double> sizes = [150, 250, 250, 150, 150];
   final List<double> centerCircleSizes = [40, 90, 90, 40, 40];
 
@@ -111,11 +89,10 @@ class ResponsiveRhythmicState extends State<ResponsiveRhythmicScreen>
     4,
     4,
     4
-  ]; //final List<int> duration = [0, 4, 2, 4, 2];
+  ];
 
   //TODO 1cycle= 12 seconds
 
-  //final List<int> duration = [0, 4, 4, 4, 4];
   int iteration = 0;
 
   var w;
@@ -1853,191 +1830,23 @@ class ResponsiveRhythmicState extends State<ResponsiveRhythmicScreen>
     }
   }
 
-  //
-  // Widget circleAnimation(BuildContext context){
-  //   return AnimatedOpacity(
-  //       opacity:
-  //       isCircleAnimation ? 1 : 0,
-  //       duration: const Duration(
-  //           seconds: 1),
-  //       child: Column(
-  //         children: [
-  //           Padding(
-  //             padding:
-  //             const EdgeInsets
-  //                 .all(5.0),
-  //             child: Center(
-  //                 child: Container(
-  //                   height: h * 0.5,
-  //                   width: w * 0.7,
-  //                   child: Center(
-  //                       child: Stack(
-  //                         children: [
-  //                           Center(
-  //                             child: Padding(
-  //                               padding:
-  //                               const EdgeInsets
-  //                                   .all(
-  //                                   8.0),
-  //                               child:
-  //                               CustomPaint(
-  //                                 painter: OpenPainter(
-  //                                     height: h *
-  //                                         0.45,
-  //                                     width: h *
-  //                                         0.45),
-  //                                 child:
-  //                                 AnimatedContainer(
-  //                                   duration:isClicked?const Duration(milliseconds: 0):
-  //                                   Duration(
-  //                                       seconds:
-  //                                       duration[iteration]),
-  //                                   width: sizes[
-  //                                   iteration],
-  //                                   height: sizes[
-  //                                   iteration],
-  //                                   child:
-  //                                   CustomPaint(
-  //                                     painter: ResponsiveCirclePainter(
-  //                                         text:
-  //                                         textArray[iteration],
-  //                                         breatheIn: double.parse(duration[1].toString()),
-  //                                         breatheOut: double.parse(duration[3].toString()),
-  //                                         hold1: double.parse(duration[2].toString()),
-  //                                         hold2: double.parse(duration[4].toString()),
-  //                                         progress: controller.value, isReset: isClicked),
-  //                                   ),
-  //                                 ),
-  //                               ),
-  //                             ),
-  //                           ),
-  //                           RotationTransition(
-  //                             turns:
-  //                             animationRotation,
-  //                             child: Transform
-  //                                 .translate(
-  //                                 child:
-  //                                 Dot(
-  //                                   radius:
-  //                                   20,
-  //                                   color:
-  //                                   Colors.red,
-  //                                 ),
-  //                                 offset:
-  //                                 Offset(
-  //                                   14 *
-  //                                       9.5 *
-  //                                       math.cos(0.0 + 3 * math.pi / 2),
-  //                                   //dotRadius  9.5  math.cos(0.0 + 3 * math.pi / 2),
-  //                                   14 *
-  //                                       9.5 *
-  //                                       math.sin(0.0 + 3 * math.pi / 2),
-  //                                 )),
-  //                           ),
-  //                         ],
-  //                       )),
-  //                 )),
-  //           ),
-  //           Align(
-  //             alignment: Alignment
-  //                 .bottomCenter,
-  //             child: Padding(
-  //                 padding:
-  //                 const EdgeInsets
-  //                     .only(
-  //                     top: 5.0,
-  //                     bottom:
-  //                     15.0),
-  //                 child: Column(
-  //                     children: [
-  //                       Row(
-  //                         mainAxisAlignment:
-  //                         MainAxisAlignment
-  //                             .spaceAround,
-  //                         children: [
-  //                           openPopMenu(),
-  //                           GestureDetector(
-  //                             child: Tooltip(
-  //                                 message: AppStrings.toolTipReplay,
-  //                                 child: Container(
-  //                                   width: MediaQuery.of(context).size.width * 0.07,
-  //                                   padding: const EdgeInsets.all(10.0),
-  //                                   decoration: BoxDecoration(color: Color(0xFF71B9E4),
-  //                                       borderRadius: BorderRadius.circular(3),
-  //                                       border: Border.all(color:AppColors.buttonBorderColor, width: 1.5)),
-  //                                   child: const Text(
-  //                                     AppStrings.replay,
-  //                                     textAlign: TextAlign.center,
-  //                                     style: TextStyle(fontFamily: "PlayfairDisplay-Regular.ttf", color: Color(0xFFFFFFFF), fontSize: 14, fontWeight: FontWeight.bold),
-  //                                   ),
-  //                                 )),
-  //                             onTap:
-  //                                 () {
-  //                               onReplayButtonClick();
-  //                             },
-  //                           )
-  //                         ],
-  //                       ),
-  //                       //TODO
-  //                       GestureDetector(
-  //                           child: Tooltip(
-  //                               message: AppStrings.toolTipStart,
-  //                               child: Container(
-  //                                 width:
-  //                                 MediaQuery.of(context).size.width * 0.065,
-  //                                 padding:
-  //                                 const EdgeInsets.all(10.0),
-  //                                 decoration: BoxDecoration(
-  //                                     color: isPracticeAgain || isAnimation? AppColors.greyColor:
-  //                                     AppColors.orangeColor,
-  //                                     borderRadius: BorderRadius.circular(3),
-  //                                     border: Border.all(color:AppColors.buttonBorderColor, width: 1.5)),
-  //                                 child:
-  //                                 const Text(
-  //                                   AppStrings.start,
-  //                                   textAlign: TextAlign.center,
-  //                                   style: TextStyle(fontFamily: "PlayfairDisplay-Regular.ttf", color: Color(0xFFFFFFFF), fontSize: 14, fontWeight: FontWeight.bold),
-  //                                 ),
-  //                               )),
-  //                           onTap: () {
-  //                             onStartButtonClick();
-  //                           }),
-  //
-  //                       Opacity(opacity: isAnimation?1.0:0.0,
-  //                         child: GestureDetector(
-  //                           child: Tooltip(
-  //                               message: isAnimation?AppStrings.toolTipReset:"",
-  //                               child: Container(
-  //                                 margin:
-  //                                 EdgeInsets.only(top: 20.0),
-  //                                 width:
-  //                                 MediaQuery.of(context).size.width * 0.065,
-  //                                 padding:
-  //                                 const EdgeInsets.all(10.0),
-  //                                 decoration: BoxDecoration(
-  //                                     color: AppColors.orangeColor,
-  //                                     borderRadius: BorderRadius.circular(3),
-  //                                     border: Border.all(color:AppColors.buttonBorderColor, width: 1.5)),
-  //                                 child:
-  //                                 const Text(
-  //                                   AppStrings.reset,
-  //                                   textAlign:
-  //                                   TextAlign.center,
-  //                                   style: TextStyle(
-  //                                       fontFamily: "PlayfairDisplay-Regular.ttf",
-  //                                       color: Color(0xFFFFFFFF),
-  //                                       fontSize: 13,
-  //                                       fontWeight: FontWeight.bold),
-  //                                 ),
-  //                               )),
-  //                           onTap: () {
-  //                             onResetButtonClick();
-  //                           },
-  //                         ),
-  //                       )
-  //                     ])),
-  //           ),
-  //         ],
-  //       ));
-  // }
 }
+
+class Dot extends StatelessWidget {
+  final double? radius;
+  final Color? color;
+
+  Dot({this.radius, this.color});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        width: radius,
+        height: radius,
+        decoration: BoxDecoration(color: color, shape: BoxShape.circle,border: Border.all(color:Color(0xff5187A7))),
+      ),
+    );
+  }
+}
+

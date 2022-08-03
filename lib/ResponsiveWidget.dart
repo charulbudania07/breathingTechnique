@@ -4,13 +4,6 @@ class ResponsiveWidget extends StatelessWidget {
   final Widget largeScreen;
   final Widget? mediumScreen;
   final Widget? smallScreen;
-
-  // Desktop W: 1025 H: 561
-  //
-  // Tablet W: 768 H: 505
-  //
-  // Mobile W: 360 H: 505
-
   const ResponsiveWidget({
     Key? key,
     required this.largeScreen,

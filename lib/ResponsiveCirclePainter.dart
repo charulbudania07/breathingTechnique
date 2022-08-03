@@ -31,7 +31,6 @@ class ResponsiveCirclePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     double radius = math.min(size.width / 2, size.height / 2);
-//print("@@$progress");
     final Paint paint = Paint()
       ..isAntiAlias = true
       ..color=Colors.red
@@ -60,17 +59,8 @@ class ResponsiveCirclePainter extends CustomPainter {
     canvas.drawCircle(center, radius / 1.011, paint..color = const Color(
         0xFF71B9E4));
     var r2=radius / 1.05;
-    //print("radius2"+r2.toString());
-    // canvas.drawCircle(center, radius / 1.12, paint..color = const Color(
-    //     0xFFCADCD8));
-
-    // canvas.drawCircle(center, radius / 1.12, paint..color = const Color(
-    //     0xFF264E8F));
-
 
     tempRadius=radius;
-    // canvas.drawCircle(center, 10, paint..color = Colors.red);
-    //
     const textStyle = TextStyle(
         color: const Color(
             0xffffffff), fontSize: 14, fontWeight: FontWeight.bold);
