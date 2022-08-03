@@ -85,6 +85,7 @@ class _RhythmicBreathingTechniqueState extends State<RhythmicBreathingTechnique>
     for (int i = 0; i < duration.length; i++) {
       sum = sum + duration[i];
     }
+
     controller = AnimationController(
         lowerBound: 0.0,
         upperBound: 1.0,
